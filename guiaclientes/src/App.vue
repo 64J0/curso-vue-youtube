@@ -62,7 +62,6 @@ export default {
 <style>
 * {
   box-sizing: border-box;
-  font-family: monospace;
   text-align: center;
 }
 
@@ -74,7 +73,6 @@ input {
 button {
   width: 50%;
   color: white;
-  margin: 4px;
   padding: 8px;
   border: none;
   border-radius: 4px;

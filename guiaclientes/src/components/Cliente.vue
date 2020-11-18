@@ -3,7 +3,7 @@
     <h4>Nome: {{ cliente.nome }}</h4>
     <hr />
     <p>E-mail: {{ cliente.email | processarEmail }}</p>
-    <p>Idade: {{ cliente.idade }}</p>
+    <p>Idade: {{ cliente.idade }} anos</p>
     <p>Ano de nascimento: {{ calculateBornYear }}</p>
     <hr />
     <span>Nome: </span>
@@ -53,7 +53,7 @@ export default {
   margin: 20px auto;
   padding: 15px;
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 600px;
   max-height: 500px;
   background-color: #1f4;
 }
@@ -61,5 +61,10 @@ export default {
 .cliente-premium {
   background-color: black;
   color: gold;
+}
+
+button,
+input {
+  margin: 4px;
 }
 </style>

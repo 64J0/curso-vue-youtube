@@ -2,9 +2,15 @@
   <form>
     <h3>Cadastro de cliente</h3>
     <small v-if="error">Erro encontrado, tente novamente!</small>
-    <input type="text" placeholder="Nome" v-model="nomeField" /><br />
-    <input type="text" placeholder="E-mail" v-model="emailField" /><br />
-    <input type="number" placeholder="Idade" v-model="idadeField" />
+    <br />
+    <span>Nome: </span>
+    <input type="text" placeholder="João José" v-model="nomeField" />
+    <br />
+    <span>E-mail: </span>
+    <input type="text" placeholder="joao@email.com" v-model="emailField" />
+    <br />
+    <span>Idade: </span>
+    <input type="number" v-model="idadeField" />
     <hr />
     <button type="button" @click="cadastrarUsuario">Cadastrar</button>
   </form>
@@ -74,7 +80,7 @@ form {
 }
 
 input {
-  width: 90%;
+  width: 80%;
   margin: 5px;
 }
 

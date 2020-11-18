@@ -22,6 +22,22 @@ Como criar um projeto com o boilerplate padrão do Vue js (semelhante ao obtido 
 npx @vue/cli create <nome_do_projeto>
 ```
 
+## Aplicações
+
+### Primeira aplicação
+
+A primeira aplicação foi criada para mostrar os conceitos mais básicos do Vue. Nela nós não nos preocupamos com detalhes estéticos, focando apenas em apresentar a estrutura do código e possibilidades da ferramenta.
+
+A imagem abaixo ilustra a aplicação, que consiste num sistema de gestão de clientes, onde são salvados o { nome, email, idade }, posteriormente acrescentando os valores de id e uma variável booleana para indicar se o usuário é *premium* ou não.
+
+O resultado pode ser visto na imagem abaixo.
+
+![Demonstração da aplicação](assets/screenshot-guiaclientes.png)
+
+### Segunda aplicação
+
+Já na segunda aplicação iremos criar uma Pokedex consumindo os dados de uma API pública que fornece os dados de todos os Pokemons.
+
 ## Referências:
 
 [1] - [Playlist com as aulas do curso no YouTube](https://www.youtube.com/watch?v=npA_f0ztIt0&list=PLJ_KhUnlXUPteacVhunyK5M8SKIadeED0)
