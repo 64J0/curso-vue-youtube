@@ -2,7 +2,7 @@
   <div :class="{ cliente: true, 'cliente-premium': cliente.premium }">
     <h4>Nome: {{ cliente.nome }}</h4>
     <hr />
-    <p>Descricao: {{ cliente.descricao }}</p>
+    <p>E-mail: {{ cliente.email }}</p>
     <p>Idade: {{ cliente.idade }}</p>
     <hr />
     <span>Nome: </span>
@@ -10,7 +10,8 @@
     <span>Idade: </span>
     <input type="text" v-model="cliente.idade" />
     <hr />
-    <button @click="setPremium">Mudar Premium</button>
+    <button @click="setPremium">Mudar Premium</button> <br />
+    <button @click="emitirEventoDelete">Deletar Usuário</button>
   </div>
 </template>
 
@@ -27,6 +28,9 @@ export default {
   methods: {
     setPremium() {
       this.cliente.premium = !this.cliente.premium;
+    },
+    emitirEventoDelete() {
+      this.$emit("deleteCliente", { id: this.cliente.id });
     },
   },
 };

@@ -7,8 +7,6 @@
     <input type="number" placeholder="Idade" v-model="idadeField" />
     <hr />
     <button type="button" @click="cadastrarUsuario">Cadastrar</button>
-
-    {{ clientes }}
   </form>
 </template>
 
@@ -19,7 +17,6 @@ export default {
       nomeField: "",
       emailField: "",
       idadeField: 0,
-      clientes: [],
       error: false,
     };
   },
@@ -45,17 +42,23 @@ export default {
       }
 
       this.error = false;
-      this.clientes.push({
+
+      const cliente = {
         id: Date.now(),
         nome: this.nomeField,
         email: this.emailField,
         idade: this.idadeField,
         premium: false,
-      });
+      };
+
+      this.emitirEventoAdd(cliente);
 
       this.nomeField = "";
       this.emailField = "";
       this.idadeField = 0;
+    },
+    emitirEventoAdd(cliente) {
+      this.$emit("addCliente", { cliente });
     },
   },
 };

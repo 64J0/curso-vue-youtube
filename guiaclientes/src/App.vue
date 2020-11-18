@@ -1,14 +1,17 @@
 <template>
   <div id="app">
-    <!-- <div v-for="cliente in clientes" :key="cliente.id">
-      <Cliente :cliente="cliente"></Cliente>
-    </div> -->
-    <Formulario />
+    <Formulario @addCliente="handleAddCliente($event)" />
+    <div v-for="cliente in clientes" :key="cliente.id">
+      <Cliente
+        :cliente="cliente"
+        @deleteCliente="handleDeleteCliente($event)"
+      ></Cliente>
+    </div>
   </div>
 </template>
 
 <script>
-// import Cliente from "./components/Cliente";
+import Cliente from "./components/Cliente";
 import Formulario from "./components/Formulario";
 
 export default {
@@ -19,30 +22,33 @@ export default {
         {
           id: 1,
           nome: "Vinícius Gajo",
-          descricao: "Um dois três",
+          email: "email_1@teste.com",
           idade: 23,
           premium: true,
         },
         {
           id: 2,
           nome: "Vinícius Marques",
-          descricao: "Quatro cinco seis",
+          email: "email_2@teste.com",
           idade: 32,
-          premium: false,
-        },
-        {
-          id: 3,
-          nome: "Vinícius Oliveira",
-          descricao: "Sete oito nove",
-          idade: 2233,
           premium: false,
         },
       ],
     };
   },
   components: {
-    // Cliente,
+    Cliente,
     Formulario,
+  },
+  methods: {
+    handleDeleteCliente({ id }) {
+      this.clientes = this.clientes.filter((cliente) => {
+        return cliente.id !== id ? true : false;
+      });
+    },
+    handleAddCliente({ cliente }) {
+      this.clientes.push(cliente);
+    },
   },
 };
 </script>
@@ -62,6 +68,7 @@ input {
 button {
   width: 50%;
   color: white;
+  margin: 4px;
   padding: 8px;
   border: none;
   border-radius: 4px;
