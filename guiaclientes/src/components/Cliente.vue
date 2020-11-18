@@ -2,8 +2,9 @@
   <div :class="{ cliente: true, 'cliente-premium': cliente.premium }">
     <h4>Nome: {{ cliente.nome }}</h4>
     <hr />
-    <p>E-mail: {{ cliente.email }}</p>
+    <p>E-mail: {{ cliente.email | processarEmail }}</p>
     <p>Idade: {{ cliente.idade }}</p>
+    <p>Ano de nascimento: {{ calculateBornYear }}</p>
     <hr />
     <span>Nome: </span>
     <input type="text" v-model="cliente.nome" />
@@ -31,6 +32,17 @@ export default {
     },
     emitirEventoDelete() {
       this.$emit("deleteCliente", { id: this.cliente.id });
+    },
+  },
+  filters: {
+    processarEmail(value) {
+      return String(value).toUpperCase();
+    },
+  },
+  computed: {
+    calculateBornYear() {
+      const actualYear = new Date().getFullYear();
+      return actualYear - this.cliente.idade;
     },
   },
 };

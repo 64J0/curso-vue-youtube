@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Formulario @addCliente="handleAddCliente($event)" />
-    <div v-for="cliente in clientes" :key="cliente.id">
+    <div v-for="cliente in orderClientes" :key="cliente.id">
       <Cliente
         :cliente="cliente"
         @deleteCliente="handleDeleteCliente($event)"
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import _ from "lodash";
 import Cliente from "./components/Cliente";
 import Formulario from "./components/Formulario";
 
@@ -28,7 +29,7 @@ export default {
         },
         {
           id: 2,
-          nome: "Vinícius Marques",
+          nome: "Barack Obama",
           email: "email_2@teste.com",
           idade: 32,
           premium: false,
@@ -48,6 +49,11 @@ export default {
     },
     handleAddCliente({ cliente }) {
       this.clientes.push(cliente);
+    },
+  },
+  computed: {
+    orderClientes() {
+      return _.orderBy(this.clientes, ["nome"], ["asc"]);
     },
   },
 };
