@@ -1,16 +1,20 @@
 <template>
   <div id="app">
+    <div id="green-box"></div>
     <Header />
+    <CallToAction />
   </div>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
+import Header from "./components/Header";
+import CallToAction from "./components/CallToAction";
 
 export default {
   name: "App",
   components: {
     Header,
+    CallToAction,
   },
 };
 </script>
@@ -19,6 +23,10 @@ export default {
 *,
 input {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
 }
 
 #app {
@@ -36,5 +44,12 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+#green-box {
+  position: relative;
+  top: 0;
+  height: 40px;
+  background-color: #42b983;
 }
 </style>
