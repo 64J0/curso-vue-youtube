@@ -32,11 +32,19 @@ A imagem abaixo ilustra a aplicação, que consiste num sistema de gestão de cl
 
 O resultado pode ser visto na imagem abaixo.
 
-![Demonstração da aplicação](assets/screenshot-guiaclientes.png)
+<span style="display: block; text-align: center;">
+  <img src="assets/screenshot-guiaclientes.png" alt="Demonstração da aplicação 1" />
+</span>
 
 ### Segunda aplicação
 
-Já na segunda aplicação iremos criar uma Pokedex consumindo os dados de uma API pública que fornece os dados de todos os Pokemons.
+Já na segunda aplicação iremos criar uma Pokedex consumindo os dados de uma API pública que fornece os dados de todos os Pokemons. Para fazer as requisições é utilizado o *axios* e para facilitar a estilização da página estamos utilizando o framework conhecido como *bulma*.
+
+O resultado deste projeto pode ser visto na imagem abaixo.
+
+<span style="display: block; text-align: center;">
+  <img src="assets/screenshot-pokedex.png" alt="Demonstração da aplicação 2" />
+</span>
 
 ## Referências:
 

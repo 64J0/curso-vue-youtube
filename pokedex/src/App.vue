@@ -1,7 +1,15 @@
 <template>
   <div id="app">
     <div class="column is-half is-offset-one-quarter">
-      <div v-for="(poke, index) in pokemons" :key="index">
+      <h1 class="title">Pokemon + Vuejs</h1>
+      <input
+        type="text"
+        class="input is-rounded"
+        placeholder="Buscar pokemon pelo nome"
+        v-model="busca"
+        @blur="findPokemon"
+      />
+      <div v-for="(poke, index) in filteredPokemons" :key="poke.name">
         <Pokemon :num="index" :name="poke.name" :url="poke.url" />
       </div>
     </div>
@@ -17,6 +25,8 @@ export default {
   data() {
     return {
       pokemons: [],
+      filteredPokemons: [],
+      busca: "",
     };
   },
   mounted() {
@@ -25,6 +35,7 @@ export default {
       .then((response) => {
         console.log("Got all pokemon data!!!");
         this.pokemons = response.data.results;
+        this.filteredPokemons = this.pokemons;
       })
       .catch((err) => {
         console.error(err);
@@ -32,6 +43,17 @@ export default {
   },
   components: {
     Pokemon,
+  },
+  methods: {
+    findPokemon() {
+      if (!this.busca.trim() || typeof this.busca !== "string") {
+        return (this.filteredPokemons = this.pokemons);
+      } else {
+        return (this.filteredPokemons = this.pokemons.filter(
+          (pokemon) => pokemon.name === this.busca.toLowerCase()
+        ));
+      }
+    },
   },
 };
 </script>

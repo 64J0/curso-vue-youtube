@@ -3,7 +3,11 @@
     <div class="card">
       <div class="card-image">
         <figure>
-          <img :src="isFront ? pokemon.front : pokemon.back" :alt="name" />
+          <img
+            style="width: 40%; height: 40%"
+            :src="isFront ? pokemon.front : pokemon.back"
+            :alt="name"
+          />
         </figure>
       </div>
 
@@ -16,7 +20,7 @@
               v-for="(t, index) in pokemon.types"
               :key="index"
             >
-              <small :class="t.type.name">
+              <small :class="t.type.name + ' pokemon-type'">
                 {{ t.type.name }}
               </small>
             </span>
@@ -24,7 +28,7 @@
         </div>
         <div class="content">
           <button
-            class="button is-medium is-fullwidth"
+            class="button is-medium is-fullwidth is-primary"
             @click="handleChangeSprite"
           >
             Mudar sprite
