@@ -58,6 +58,12 @@ O objetivo com este projeto é criar um *TO-DO App*, ou seja, uma aplicação pa
 
 Embora o algoritmo seja bastante simples, o objetivo ao desenvolver essa aplicação é apenas estudar o framework *Vuetify*.
 
+O resultado deste projeto pode ser visto na imagem a seguir.
+
+<span style="display: block; text-align: center;">
+  <img src="assets/screenshot-todo.png" alt="Demonstração da aplicação 4" />
+</span>
+
 ## Referências:
 
 [1] - [Playlist com as aulas do curso no YouTube](https://www.youtube.com/watch?v=npA_f0ztIt0&list=PLJ_KhUnlXUPteacVhunyK5M8SKIadeED0)
@@ -69,6 +75,8 @@ Embora o algoritmo seja bastante simples, o objetivo ao desenvolver essa aplica�
 [4] - [Vuetify Material Framework in 60 minutes | From Scratch to Pro in Vuetify Vuejs](https://www.youtube.com/watch?v=GeUhmMJUFZQ&ref=madewithvuejs.com)
 
 [5] - [Top Vuetify Tutorials](https://madewithvuejs.com/blog/top-vuetify-tutorials)
+
+[6] - [What is Vuex?](https://vuex.vuejs.org/#what-is-a-state-management-pattern)
 
 ---
 Vinícius Gajo Marques Oliveira, 2020.
