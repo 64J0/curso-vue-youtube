@@ -46,6 +46,16 @@ O resultado deste projeto pode ser visto na imagem abaixo.
   <img src="assets/screenshot-pokedex.png" alt="Demonstração da aplicação 2" />
 </span>
 
+### Terceira aplicação
+
+Continuando no pique resolvi criar outras aplicações para ir me acostumando com o Vue.js. A terceira aplicação que decidi criar foi o clone na *landing page* do próprio site do Vue.
+
+### Quarta aplicação
+
+A quarta aplicação criada foi um sistema desenvolvido para entender o *Vuetify*, que é um framework que fornece um conjunto de componentes já criados e estilizados, facilitando e agilizando o desenvolvimento de novas aplicações, além de garantir um estilo único para projetos com muitos integrantes.
+
+O objetivo com este projeto é criar outro *TO-DO* (sim, muito criativo haha).
+
 ## Referências:
 
 [1] - [Playlist com as aulas do curso no YouTube](https://www.youtube.com/watch?v=npA_f0ztIt0&list=PLJ_KhUnlXUPteacVhunyK5M8SKIadeED0)
