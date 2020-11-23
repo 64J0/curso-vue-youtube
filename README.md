@@ -1,8 +1,8 @@
 # Códigos do curso de Vue JS - Guia do Programador
 
-Neste repositório podem ser encontrados os códigos criados ao longo do Curso de Vue JS, do canal Victor Lima - Guia do Programador, no YouTube compartilhado de maneira gratuita.
+Neste repositório podem ser encontrados os códigos criados ao longo do Curso de Vue JS, do canal Victor Lima - Guia do Programador, no YouTube compartilhado de maneira gratuita, além de outros códigos de projetos que estou desenvolvendo separadamente para estudar a ferramenta.
 
-Nestas aulas foi apresentado o funcionamento do Vue através de exemplos práticos. 
+Nas aulas do canal do Victor Lima foi apresentado o funcionamento do Vue através de exemplos práticos. 
 
 Lidamos com:
 
@@ -54,11 +54,21 @@ Continuando no pique resolvi criar outras aplicações para ir me acostumando co
 
 A quarta aplicação criada foi um sistema desenvolvido para entender o *Vuetify*, que é um framework que fornece um conjunto de componentes já criados e estilizados, facilitando e agilizando o desenvolvimento de novas aplicações, além de garantir um estilo único para projetos com muitos integrantes.
 
-O objetivo com este projeto é criar outro *TO-DO* (sim, muito criativo haha).
+O objetivo com este projeto é criar um *TO-DO App*, ou seja, uma aplicação para listar tarefas e posteriormente marcar as já finalizadas (sim... muito criativo haha).
+
+Embora o algoritmo seja bastante simples, o objetivo ao desenvolver essa aplicação é apenas estudar o framework *Vuetify*.
 
 ## Referências:
 
 [1] - [Playlist com as aulas do curso no YouTube](https://www.youtube.com/watch?v=npA_f0ztIt0&list=PLJ_KhUnlXUPteacVhunyK5M8SKIadeED0)
+
+[2] - [Vue.js Guide](https://vuejs.org/v2/guide)
+
+[3] - [How to Get Started with Vuetify](https://www.sitepoint.com/get-started-vuetify/)
+
+[4] - [Vuetify Material Framework in 60 minutes | From Scratch to Pro in Vuetify Vuejs](https://www.youtube.com/watch?v=GeUhmMJUFZQ&ref=madewithvuejs.com)
+
+[5] - [Top Vuetify Tutorials](https://madewithvuejs.com/blog/top-vuetify-tutorials)
 
 ---
 Vinícius Gajo Marques Oliveira, 2020.
