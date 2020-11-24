@@ -6,7 +6,7 @@
       v-model="newTaskMessage"
     ></v-text-field>
     <v-layout justify-end>
-      <v-btn class="p-4" dark color="teal" @click="emitAddTask"
+      <v-btn class="p-4" dark color="teal" @click="addTaskToStore"
         >ADD <v-icon right dark>playlist_add</v-icon></v-btn
       >
     </v-layout>
@@ -21,10 +21,17 @@ export default {
     };
   },
   methods: {
-    emitAddTask() {
+    addTaskToStore() {
       if (!this.newTaskMessage) return null;
 
-      this.$emit("add-task", { message: this.newTaskMessage });
+      this.$store.dispatch({
+        type: "addTask",
+        payload: {
+          id: Date.now().toString(),
+          message: this.newTaskMessage,
+        },
+      });
+
       this.newTaskMessage = "";
       return null;
     },

@@ -52,11 +52,11 @@ Continuando no pique resolvi criar outras aplicações para ir me acostumando co
 
 ### Quarta aplicação
 
-A quarta aplicação criada foi um sistema desenvolvido para entender o *Vuetify*, que é um framework que fornece um conjunto de componentes já criados e estilizados, facilitando e agilizando o desenvolvimento de novas aplicações, além de garantir um estilo único para projetos com muitos integrantes.
+A quarta aplicação criada foi um sistema desenvolvido para entender o *Vuetify* e *Vuex*, sendo o primeiro um framework que fornece um conjunto de componentes já criados e estilizados, facilitando e agilizando o desenvolvimento de novas aplicações, além de garantir um estilo único para projetos com muitos integrantes e o segundo uma ferramenta utilizada para garantir uma manipulação de estados de forma mais organizada e centralizada.
 
 O objetivo com este projeto é criar um *TO-DO App*, ou seja, uma aplicação para listar tarefas e posteriormente marcar as já finalizadas (sim... muito criativo haha).
 
-Embora o algoritmo seja bastante simples, o objetivo ao desenvolver essa aplicação é apenas estudar o framework *Vuetify*.
+Embora o algoritmo seja bastante simples, o objetivo ao desenvolver essa aplicação é apenas estudar os frameworks *Vuetify* em conjunto com o *Vuex*, como mencionado anteriormente.
 
 O resultado deste projeto pode ser visto na imagem a seguir.
 
@@ -77,6 +77,8 @@ O resultado deste projeto pode ser visto na imagem a seguir.
 [5] - [Top Vuetify Tutorials](https://madewithvuejs.com/blog/top-vuetify-tutorials)
 
 [6] - [What is Vuex?](https://vuex.vuejs.org/#what-is-a-state-management-pattern)
+
+[7] - [Vuex course on Scrimba](https://scrimba.com/g/gvuex)
 
 ---
 Vinícius Gajo Marques Oliveira, 2020.

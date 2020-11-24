@@ -6,18 +6,18 @@
         color="teal"
         solo
         v-model="messageItem"
-        @keyup="emitEditTask"
+        @keyup="editTaskInStore"
         prepend-icon="arrow_right_alt"
       >
         <template slot="append">
           <v-icon
             class="pr-3"
-            @mouseup="emitCompleteTask"
+            @mouseup="completeTaskInStore"
             style="cursor: pointer"
           >
             done
           </v-icon>
-          <v-icon @mouseup="emitDestroyTask" style="cursor: pointer">
+          <v-icon @mouseup="destroyTaskInStore" style="cursor: pointer">
             clear
           </v-icon>
         </template>
@@ -38,20 +38,29 @@ export default {
     };
   },
   methods: {
-    emitEditTask() {
-      return this.$emit("edit-task", {
-        id: this.id,
-        message: this.messageItem,
+    editTaskInStore() {
+      return this.$store.dispatch({
+        type: "editTask",
+        payload: {
+          id: this.id,
+          message: this.messageItem,
+        },
       });
     },
-    emitCompleteTask() {
-      return this.$emit("complete-task", {
-        id: this.id,
+    completeTaskInStore() {
+      return this.$store.dispatch({
+        type: "completeTask",
+        payload: {
+          id: this.id,
+        },
       });
     },
-    emitDestroyTask() {
-      return this.$emit("destroy-task", {
-        id: this.id,
+    destroyTaskInStore() {
+      return this.$store.dispatch({
+        type: "destroyTask",
+        payload: {
+          id: this.id,
+        },
       });
     },
   },
