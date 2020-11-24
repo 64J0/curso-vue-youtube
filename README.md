@@ -64,6 +64,8 @@ O resultado deste projeto pode ser visto na imagem a seguir.
   <img src="assets/screenshot-todo.png" alt="Demonstração da aplicação 4" />
 </span>
 
+Finalizando este projeto foram desenvolvidos testes automatizados para o projeto, utilizando o *Jest* para executá-los. Foram executados testes nas *mutations* e *actions* da store do *Vuex* separadamente.
+
 ## Referências:
 
 [1] - [Playlist com as aulas do curso no YouTube](https://www.youtube.com/watch?v=npA_f0ztIt0&list=PLJ_KhUnlXUPteacVhunyK5M8SKIadeED0)
@@ -79,6 +81,10 @@ O resultado deste projeto pode ser visto na imagem a seguir.
 [6] - [What is Vuex?](https://vuex.vuejs.org/#what-is-a-state-management-pattern)
 
 [7] - [Vuex course on Scrimba](https://scrimba.com/g/gvuex)
+
+[8] - [How to Test Your Vue Components Using the Jest Testing Framework](https://www.digitalocean.com/community/tutorials/vuejs-vue-testing)
+
+[9] - Testing Vue.js Applications, *Edd Yerburgh*.
 
 ---
 Vinícius Gajo Marques Oliveira, 2020.

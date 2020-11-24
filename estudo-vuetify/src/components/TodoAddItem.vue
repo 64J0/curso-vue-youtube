@@ -4,9 +4,15 @@
       type="text"
       placeholder="Type a new task to increment the list"
       v-model="newTaskMessage"
+      ref="add-task-input"
     ></v-text-field>
     <v-layout justify-end>
-      <v-btn class="p-4" dark color="teal" @click="addTaskToStore"
+      <v-btn
+        class="p-4"
+        dark
+        color="teal"
+        @click="addTaskToStore"
+        ref="add-task-btn"
         >ADD <v-icon right dark>playlist_add</v-icon></v-btn
       >
     </v-layout>

@@ -1,7 +1,7 @@
 const mutations = {
   addTask(state, { payload }) {
     state.todoArray.push(payload);
-    console.log("Task has been added");
+    // console.log("Task has been added");
     return null;
   },
   editTask(state, { payload }) {

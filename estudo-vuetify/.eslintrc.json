@@ -26,5 +26,6 @@
         "no-console": "off",
         "no-plusplus": "off",
         "no-param-reassign": "off"
-    }
+    },
+    "ignorePatterns": "__tests__/"
 }
