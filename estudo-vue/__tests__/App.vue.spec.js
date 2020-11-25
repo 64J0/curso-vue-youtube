@@ -52,4 +52,12 @@ describe("Mounted App", () => {
   it("should have 5 items in the todoArray computed properties", () => {
     expect(wrapper.vm.todoArray.length).toBe(5);
   });
+
+  it("should have 0 items in the completedArray computed properties", () => {
+    expect(wrapper.vm.completedArray.length).toBe(0);
+  });
+
+  it("should have 0 items in the destroyedArray computed properties", () => {
+    expect(wrapper.vm.destroyedArray.length).toBe(0);
+  });
 });

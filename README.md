@@ -64,9 +64,22 @@ O resultado deste projeto pode ser visto na imagem a seguir.
   <img src="assets/screenshot-todo.png" alt="Demonstração da aplicação 4" />
 </span>
 
-Finalizando este projeto foram desenvolvidos testes automatizados para o projeto, utilizando o *Jest* para executá-los. Foram executados testes nas *mutations* e *actions* da store do *Vuex* separadamente.
+Finalizando este projeto foram desenvolvidos testes automatizados para o projeto, utilizando o *Jest* para executá-los.
+
+Foram criados vários testes unitários, que são basicamente testes de componentes individualmente. Segundo a referência [12], alguns dos benefícios desse tipo de testes são:
+
+- Verificar se os componentes funcionam corretamente;
+- Prover documentação (dinâmica) da aplicação;
+- Facilita o processo de *debug*, pois fica mais fácil encontrar os problemas com a execução dos testes;
+- Diminui a quantidade de *bugs*.
+
+No momento ainda não criei nenhum projeto utilizando a metodologia *TDD* conforme apresentado pela referência [13], porém é o próximo passo na trajetória de aprendizado abordada neste projeto.
+
+*Observação: Os testes não devem cobrir 100% do código pois isto irá torná-lo frágil. O ideal é testar apenas as entradas e saídas de um determinado componente, sem levar em consideração a lógica interna. A pergunta que define se algo deve ser testado ou não é: 'Do I care about this if it changes?' [13]*
 
 ## Referências:
+
+Abaixo segue uma lista com todas as referências utilizadas e consumidas para a realização destes projetos na trajetória de aprendizado sobre Vue.js.
 
 [1] - [Playlist com as aulas do curso no YouTube](https://www.youtube.com/watch?v=npA_f0ztIt0&list=PLJ_KhUnlXUPteacVhunyK5M8SKIadeED0)
 
@@ -85,6 +98,14 @@ Finalizando este projeto foram desenvolvidos testes automatizados para o projeto
 [8] - [How to Test Your Vue Components Using the Jest Testing Framework](https://www.digitalocean.com/community/tutorials/vuejs-vue-testing)
 
 [9] - Testing Vue.js Applications, *Edd Yerburgh*.
+
+[10] - [Vue Test Utils - Guides](https://vue-test-utils.vuejs.org/guides/#common-tips)
+
+[11] - [Vue NYC - Component Tests with Vue.js - Matt O'Connell](https://www.youtube.com/watch?v=OIpfWTThrK8)
+
+[12] - [Edd Yerburgh - Unit testing Vue components Why test, what to test, and how to test Vue components](https://www.youtube.com/watch?v=LxXsGNXsMo8)
+
+[13] - [Test driven development with Vue.js by Sarah Dayan](https://www.youtube.com/watch?v=DD1fEhcEzY8)
 
 ---
 Vinícius Gajo Marques Oliveira, 2020.

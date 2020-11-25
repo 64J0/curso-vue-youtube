@@ -2,9 +2,9 @@ import Vue from "vue";
 import Vuetify from "vuetify";
 import { mount } from "@vue/test-utils";
 
-import TodoAddItem from "../src/components/TodoAddItem.vue";
+import TodoAddItem from "../../src/components/TodoAddItem.vue";
 
-import store from "../src/store";
+import store from "../../src/store";
 
 Vue.use(Vuetify);
 let wrapper;
@@ -16,10 +16,11 @@ describe("TodoAddItem Component", () => {
 
   it("should do nothing when the user clicks in the Add Button but the input component is empty", async () => {
     const spy = jest.spyOn(wrapper.vm, "addTaskToStore");
+    expect(wrapper.vm._data.newTaskMessage).toBe("");
 
     const btn = wrapper.findComponent({ ref: "add-task-btn" });
     await btn.trigger("click");
-    // expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalled();
     expect(store.state.todoArray.length).toBe(5);
   });
 

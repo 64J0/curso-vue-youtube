@@ -11,7 +11,7 @@
         class="p-4"
         dark
         color="teal"
-        @click="addTaskToStore"
+        @click="addTaskToStore()"
         ref="add-task-btn"
         >ADD <v-icon right dark>playlist_add</v-icon></v-btn
       >

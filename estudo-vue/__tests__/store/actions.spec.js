@@ -1,5 +1,5 @@
-import actions from "../src/store/actions";
-import mutations from "../src/store/mutations";
+import actions from "../../src/store/actions";
+import mutations from "../../src/store/mutations";
 
 let state = {};
 let context = {};

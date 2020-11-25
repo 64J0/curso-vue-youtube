@@ -2,11 +2,16 @@
   <v-app>
     <v-layout align-center justify-center>
       <v-flex xs11 sm9 md7 lg5 xl3>
-        <v-card class="mb-5 elevation-10">
+        <v-card class="mb-3 elevation-10">
           <TodoTitle />
           <TodoAddItem />
-          <v-list v-for="todo in todoArray" :key="todo.id">
-            <TodoItem :id="todo.id" :message="todo.message" />
+          <v-list>
+            <TodoItem
+              v-for="todo in todoArray"
+              :key="todo.id"
+              :id="todo.id"
+              :message="todo.message"
+            />
           </v-list>
         </v-card>
       </v-flex>

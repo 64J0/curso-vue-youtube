@@ -1,7 +1,7 @@
 <template>
   <v-footer height="auto" fixed>
     <v-layout justify-center row wrap>
-      <v-flex py-3 text-xs-center xs12>
+      <v-flex py-3 text-xs-center xs12 ref="footer-text-el">
         Made with <v-icon color="red" size="18px">favorite</v-icon> by:
         <a href="https://github.com/64J0">64J0</a>.
       </v-flex>
