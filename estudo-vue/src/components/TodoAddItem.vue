@@ -1,20 +1,22 @@
 <template>
   <v-container>
-    <v-text-field
-      type="text"
-      placeholder="Type a new task to increment the list"
-      v-model="newTaskMessage"
-      ref="add-task-input"
-    ></v-text-field>
-    <v-layout justify-end>
-      <v-btn
-        class="p-4"
-        dark
-        color="teal"
-        @click="addTaskToStore()"
-        ref="add-task-btn"
-        >ADD <v-icon right dark>playlist_add</v-icon></v-btn
-      >
+    <v-layout column>
+      <v-text-field
+        type="text"
+        placeholder="Type a new task to increment the list"
+        v-model="newTaskMessage"
+        ref="add-task-input"
+      ></v-text-field>
+      <v-layout justify-end>
+        <v-btn
+          class="p-3"
+          dark
+          color="teal"
+          @click="addTaskToStore()"
+          ref="add-task-btn"
+          >ADD <v-icon right dark>playlist_add</v-icon></v-btn
+        >
+      </v-layout>
     </v-layout>
   </v-container>
 </template>

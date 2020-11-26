@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-layout align-center justify-center>
+    <v-layout justify-center align-center>
       <v-flex xs11 sm9 md7 lg5 xl3>
         <v-card class="mb-3 elevation-10">
           <TodoTitle />
