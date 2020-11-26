@@ -22,9 +22,11 @@ Como criar um projeto com o boilerplate padrão do Vue js (semelhante ao obtido 
 npx @vue/cli create <nome_do_projeto>
 ```
 
+---
+
 ## Aplicações
 
-### Primeira aplicação
+### Primeira aplicação *1-guiaclientes*
 
 A primeira aplicação foi criada para mostrar os conceitos mais básicos do Vue. Nela nós não nos preocupamos com detalhes estéticos, focando apenas em apresentar a estrutura do código e possibilidades da ferramenta.
 
@@ -36,7 +38,7 @@ O resultado pode ser visto na imagem abaixo.
   <img src="assets/screenshot-guiaclientes.png" alt="Demonstração da aplicação 1" />
 </span>
 
-### Segunda aplicação
+### Segunda aplicação *2-pokedex*
 
 Já na segunda aplicação iremos criar uma Pokedex consumindo os dados de uma API pública que fornece os dados de todos os Pokemons. Para fazer as requisições é utilizado o *axios* e para facilitar a estilização da página estamos utilizando o framework conhecido como *bulma*.
 
@@ -46,13 +48,9 @@ O resultado deste projeto pode ser visto na imagem abaixo.
   <img src="assets/screenshot-pokedex.png" alt="Demonstração da aplicação 2" />
 </span>
 
-### Terceira aplicação
+### Terceira aplicação *3-estudo-vue*
 
-Continuando no pique resolvi criar outras aplicações para ir me acostumando com o Vue.js. A terceira aplicação que decidi criar foi o clone na *landing page* do próprio site do Vue.
-
-### Quarta aplicação
-
-A quarta aplicação criada foi um sistema desenvolvido para entender o *Vuetify* e *Vuex*, sendo o primeiro um framework que fornece um conjunto de componentes já criados e estilizados, facilitando e agilizando o desenvolvimento de novas aplicações, além de garantir um estilo único para projetos com muitos integrantes e o segundo uma ferramenta utilizada para garantir uma manipulação de estados de forma mais organizada e centralizada.
+A terceira aplicação criada foi um sistema desenvolvido para entender o *Vuetify* e *Vuex*, sendo o primeiro um framework que fornece um conjunto de componentes já criados e estilizados, facilitando e agilizando o desenvolvimento de novas aplicações, além de garantir um estilo único para projetos com muitos integrantes e o segundo uma ferramenta utilizada para garantir uma manipulação de estados de forma mais organizada e centralizada.
 
 O objetivo com este projeto é criar um *TO-DO App*, ou seja, uma aplicação para listar tarefas e posteriormente marcar as já finalizadas (sim... muito criativo haha).
 
@@ -76,6 +74,14 @@ Foram criados vários testes unitários, que são basicamente testes de componen
 No momento ainda não criei nenhum projeto utilizando a metodologia *TDD* conforme apresentado pela referência [13], porém é o próximo passo na trajetória de aprendizado abordada neste projeto.
 
 *Observação: Os testes não devem cobrir 100% do código pois isto irá torná-lo frágil. O ideal é testar apenas as entradas e saídas de um determinado componente, sem levar em consideração a lógica interna. A pergunta que define se algo deve ser testado ou não é: 'Do I care about this if it changes?' [13]*
+
+### Quarta aplicação *4-vue-audio*
+
+Nesta quarta aplicação estou desenvolvendo um player customizado de audio utilizando os componentes disponibilizados por padrão pelo HTML + JavaScript do Browser.
+
+O objetivo deste projeto é avaliar a realização de testes em situações mais incomuns, além de entender como funcionam as funcionalidades de Audio do Chrome.
+
+---
 
 ## Referências:
 
