@@ -1,22 +1,27 @@
 <template>
   <div :class="{ cliente: true, 'cliente-premium': cliente.premium }">
-    <h4>Nome: {{ cliente.nome }}</h4>
+    <h4 ref="cliente.nome">Nome: {{ cliente.nome }}</h4>
     <hr />
-    <p>E-mail: {{ cliente.email | processarEmail }}</p>
-    <p>Idade: {{ cliente.idade }} anos</p>
-    <p>Ano de nascimento: {{ calculateBornYear }}</p>
+    <p ref="cliente.email">E-mail: {{ cliente.email | processarEmail }}</p>
+    <p ref="cliente.idade">Idade: {{ cliente.idade }} anos</p>
+    <p ref="cliente.nascimento">Ano de nascimento: {{ bornYear }}</p>
     <hr />
     <span>Nome: </span>
-    <input type="text" v-model="cliente.nome" />
+    <input type="text" v-model="cliente.nome" ref="model.cliente.nome" />
     <span>Idade: </span>
-    <input type="text" v-model="cliente.idade" />
+    <input type="text" v-model="cliente.idade" ref="model.cliente.idade" />
     <hr />
-    <button @click="setPremium">Mudar Premium</button> <br />
-    <button @click="emitirEventoDelete">Deletar Usuário</button>
+    <button @click="setPremium()" ref="btn.premium">Mudar Premium</button>
+    <br />
+    <button @click="emitirEventoDelete()" ref="btn.deletar">
+      Deletar Usuário
+    </button>
   </div>
 </template>
 
 <script>
+import calculateBornYear from "../utils/calculateBornYear";
+
 export default {
   props: {
     cliente: Object,
@@ -40,9 +45,8 @@ export default {
     },
   },
   computed: {
-    calculateBornYear() {
-      const actualYear = new Date().getFullYear();
-      return actualYear - this.cliente.idade;
+    bornYear() {
+      return calculateBornYear({ idade: this.cliente.idade });
     },
   },
 };

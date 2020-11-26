@@ -1,18 +1,32 @@
 <template>
   <form>
     <h3>Cadastro de cliente</h3>
-    <small v-if="error">Erro encontrado, tente novamente!</small>
+    <small v-if="error" ref="error.message"
+      >Erro encontrado, tente novamente!</small
+    >
     <br />
     <span>Nome: </span>
-    <input type="text" placeholder="João José" v-model="nomeField" />
+    <input
+      type="text"
+      placeholder="João José"
+      v-model="nomeField"
+      ref="nome.field"
+    />
     <br />
     <span>E-mail: </span>
-    <input type="text" placeholder="joao@email.com" v-model="emailField" />
+    <input
+      type="text"
+      placeholder="joao@email.com"
+      v-model="emailField"
+      ref="email.field"
+    />
     <br />
     <span>Idade: </span>
-    <input type="number" v-model="idadeField" />
+    <input type="number" v-model="idadeField" ref="idade.field" />
     <hr />
-    <button type="button" @click="cadastrarUsuario">Cadastrar</button>
+    <button type="button" @click="cadastrarUsuario()" ref="btn.cadastrar">
+      Cadastrar
+    </button>
   </form>
 </template>
 
