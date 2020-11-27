@@ -1,29 +1,28 @@
 <template>
-  <div id="app" @change="getWindowSize()">
-    {{ getCurrentTime }}
-    {{ getWindowSize }}
-    <div id="progress-bar">
-      <div id="progress"></div>
-    </div>
-    <ProgressTrack :currentTime="audioObj.currentTime" />
-    <button @click="playAudio()">Play</button>
-    <button @click="pauseAudio()">Pause</button>
+  <div id="app">
+    <h2>VUE PLAYER</h2>
+    {{ windowSize }}
+    <ProgressBar
+      :currentTime="audioObj.currentTime"
+      :windowSize="windowSize"
+      :duration="duration"
+    />
+    <ControlButtons @audioPlay="playAudio()" @audioPause="pauseAudio()" />
   </div>
 </template>
 
 <script>
-import ProgressTrack from "./components/ProgressTrack.vue";
+import ProgressBar from "./components/ProgressBar.vue";
+import ControlButtons from "./components/ControlButtons.vue";
 
 export default {
   name: "App",
   data() {
     return {
-      audioFile: {
-        src: "http://soundbible.com/mp3/creepy-background-daniel_simon.mp3",
-      },
+      audioSrc: "http://soundbible.com/mp3/creepy-background-daniel_simon.mp3",
       audioObj: {},
-      duration: 1,
-      getWindowSize: window.innerWidth,
+      duration: 3,
+      windowSize: 100,
     };
   },
   computed: {
@@ -39,26 +38,51 @@ export default {
       return this.audioObj.pause();
     },
   },
-  created() {
-    this.audioObj = new Audio(this.audioFile.src);
+  mounted() {
+    this.audioObj = new Audio(this.audioSrc);
     this.duration = this.audioObj.duration;
+    this.windowSize = this.$el.clientWidth;
+    window.addEventListener("resize", () => {
+      this.windowSize = this.$el.clientWidth;
+    });
+    this.audioObj.addEventListener("playing", () => {
+      console.log("Playing...");
+      console.log(this.audioObj.currentTime);
+    });
   },
   components: {
-    ProgressTrack,
+    ProgressBar,
+    ControlButtons,
   },
 };
 </script>
 
 <style>
-#progress-bar {
-  margin: 1rem;
-  height: 20px;
-  background-color: rgba(128, 0, 128, 0.3);
+* {
+  font-family: monospace;
 }
 
-#progress {
-  height: 20px;
-  width: 500px;
-  background-color: rgba(128, 0, 128, 0.8);
+body {
+  margin: 0;
+  padding: 0;
+  outline: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+#app {
+  margin: 0 auto;
+  height: 400px;
+  width: 75%;
+  max-width: 600px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  border: 2px solid#03a9f4;
+  border-radius: 1rem;
 }
 </style>
