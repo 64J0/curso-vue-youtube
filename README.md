@@ -1,6 +1,8 @@
-# Códigos do curso de Vue JS - Guia do Programador
+# Estudos em Vue.js
 
-Neste repositório podem ser encontrados os códigos criados ao longo do Curso de Vue JS, do canal Victor Lima - Guia do Programador, no YouTube compartilhado de maneira gratuita, além de outros códigos de projetos que estou desenvolvendo separadamente para estudar a ferramenta.
+Neste repositório podem ser encontrados os códigos de alguns projetos que estou desenvolvendo para aprender o framework Vue.js. 
+
+Os primeiros projetos criados foram versões customizadas dos apresentados ao longo do Curso de Vue JS, do canal Victor Lima - Guia do Programador, no YouTube compartilhado de maneira gratuita, porém, posteriormente decidi explorar por conta própria com projetos diferentes.
 
 Nas aulas do canal do Victor Lima foi apresentado o funcionamento do Vue através de exemplos práticos. 
 
@@ -21,6 +23,8 @@ Como criar um projeto com o boilerplate padrão do Vue js (semelhante ao obtido 
 # cria o boilerplate do projeto
 npx @vue/cli create <nome_do_projeto>
 ```
+
+A medida que vou estudando mais sobre o universo desta ferramenta vou tentando aplicar estes conceitos na prática para fixar as informações. Para saber mais sobre as aplicações desenvolvidas basta ler o restante deste documento que contém um resumo de cada projeto.
 
 ---
 
