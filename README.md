@@ -86,7 +86,16 @@ Nesta quarta aplicação estou desenvolvendo um player customizado de audio util
 O objetivo deste projeto é avaliar a realização de testes em situações mais incomuns, além de entender como funcionam as funcionalidades de Audio do Chrome.
 
 ---
+## Test Coverage - Explicação dos termos
 
+Esta seção deste documento foi totalmente baseada nos tópicos da referência [14], onde são abordados justamente os conceitos do *test coverage* do *Jest*.
+
+- **Function coverage:** Todas as funções (ou subrotinas) no programa foram chamadas?
+- **Statement coverage:** Todas as instruções do programa foram executadas?
+- **Branch coverage:** Todos os ramos (também chamados *DD-path*) de todas as estruturas de controle (como as instruções *if* ou *case*) foram executados? Por exemplo, dada uma instrução, tanto o ramo relacionado ao estado *true* quanto o ramo relacionado ao estado *false* foram percorridos?
+- **Line coverage:** Todas as linhas executáveis no arquivo fonte foram executadas?
+
+---
 ## Referências:
 
 Abaixo segue uma lista com todas as referências utilizadas e consumidas para a realização destes projetos na trajetória de aprendizado sobre Vue.js.
@@ -116,6 +125,8 @@ Abaixo segue uma lista com todas as referências utilizadas e consumidas para a 
 [12] - [Edd Yerburgh - Unit testing Vue components Why test, what to test, and how to test Vue components](https://www.youtube.com/watch?v=LxXsGNXsMo8)
 
 [13] - [Test driven development with Vue.js by Sarah Dayan](https://www.youtube.com/watch?v=DD1fEhcEzY8)
+
+[14] - [How to read Test Coverage report generated using Jest](https://medium.com/@krishankantsinghal/how-to-read-test-coverage-report-generated-using-jest-c2d1cb70da8b)
 
 ---
 Vinícius Gajo Marques Oliveira, 2020.

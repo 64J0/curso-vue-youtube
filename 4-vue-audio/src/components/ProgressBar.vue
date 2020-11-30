@@ -1,6 +1,13 @@
 <template>
-  <div id="progress-bar" :style="{ width: getProgressBarWidth + 'px' }">
-    <div id="progress" :style="{ width: getProgressWidth + 'px' }"></div>
+  <div 
+    @mousedown="(e) => getProgressBarPosition(e)" 
+    id="progress-bar" 
+    :style="{ width: elementSize + 'px' }"
+  >
+    <div 
+      id="progress" 
+      :style="{ width: getProgressWidth + 'px' }"
+    ></div>
   </div>
 </template>
 
@@ -9,31 +16,36 @@ export default {
   props: {
     duration: Number,
     currentTime: Number,
+    elementSize: Number,
     windowSize: Number,
   },
   computed: {
-    getProgressBarWidth() {
-      return this.windowSize - 90;
-    },
     getProgressWidth() {
-      // const percent = this.currentTime / this.duration;
-      const percent = 0.5;
-      return percent * this.getProgressBarWidth;
+      const percent = this.currentTime / this.duration;
+      return percent * this.elementSize;
     },
   },
+  methods: {
+    getProgressBarPosition(e) {
+      const initialPositionX = (this.windowSize - this.elementSize) * 0.5;
+      const percent = (e.pageX - initialPositionX) / this.elementSize;
+      this.$emit("customSkip", { percent });
+    }
+  }
 };
 </script>
 
 <style scoped>
 #progress-bar {
   margin: 1rem;
-  height: 20px;
+  height: 14px;
   background-color: #81d4fa;
+  cursor: pointer;
 }
 
 #progress {
-  height: 20px;
-  width: 200px;
+  height: 14px;
   background-color: #01579b;
+  border-right: 6px solid red;
 }
 </style>

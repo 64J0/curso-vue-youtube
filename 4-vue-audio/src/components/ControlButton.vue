@@ -1,18 +1,24 @@
 <template>
   <div id="control-buttons">
-    <button id="play" @click="emitPlayAudio()">Play</button>
-    <button id="pause" @click="emitPauseAudio()">Pause</button>
+    <button
+      :class="{ play: mustPlay, pause: !mustPlay }"
+      @click="controlAudio()"
+      ref="btnControlAudio"
+    >
+      {{ mustPlay ? "Play" : "Pause" }}
+    </button>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    mustPlay: Boolean,
+  },
   methods: {
-    emitPlayAudio() {
-      this.$emit("audioPlay");
-    },
-    emitPauseAudio() {
-      this.$emit("audioPause");
+    controlAudio() {
+      this.mustPlay ? this.$emit("audioPlay") : this.$emit("audioPause");
+      this.$emit("toggleMustPlay");
     },
   },
 };
@@ -24,24 +30,23 @@ button {
   width: 150px;
   margin: 0.5rem 3rem;
   padding: 0.5rem;
-  border: 2px solid #03a9f4;
   border-radius: 0.25rem;
   outline: none;
+  border: 2px solid #03a9f4;
 }
 
 #control-buttons {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   width: 100%;
-  justify-content: space-between;
 }
 
-#play {
+.play {
   background-color: #03a9f4;
   color: #fff;
 }
 
-#pause {
+.pause {
   background-color: #fff;
   color: #03a9f4;
 }

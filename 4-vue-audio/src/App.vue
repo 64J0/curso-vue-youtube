@@ -1,34 +1,47 @@
 <template>
   <div id="app">
-    <h2>VUE PLAYER</h2>
-    {{ windowSize }}
-    <ProgressBar
-      :currentTime="audioObj.currentTime"
-      :windowSize="windowSize"
-      :duration="duration"
+    <DisplayInfo
+      :elementSize="elementSize"
+      :songName="songName"
+      :stream="stream"
     />
-    <ControlButtons @audioPlay="playAudio()" @audioPause="pauseAudio()" />
+    <h2>VUE PLAYER</h2>
+    <ProgressBar
+      :currentTime="currentTime"
+      :windowSize="windowSize"
+      :elementSize="elementSize"
+      :duration="duration"
+      @customSkip="skipAudio"
+    />
+    <ControlButton
+      :mustPlay="mustPlay"
+      @audioPlay="playAudio()"
+      @audioPause="pauseAudio()"
+      @toggleMustPlay="toggleMustPlay()"
+    />
   </div>
 </template>
 
 <script>
 import ProgressBar from "./components/ProgressBar.vue";
-import ControlButtons from "./components/ControlButtons.vue";
+import ControlButton from "./components/ControlButton.vue";
+import DisplayInfo from "./components/DisplayInfo.vue";
 
 export default {
   name: "App",
   data() {
     return {
-      audioSrc: "http://soundbible.com/mp3/creepy-background-daniel_simon.mp3",
+      audioSrc:
+        "https://www.bensound.com/bensound-music/bensound-happyrock.mp3",
       audioObj: {},
       duration: 3,
       windowSize: 100,
+      elementSize: 100,
+      currentTime: 0.1,
+      mustPlay: true,
+      songName: "Bensound Happyrock",
+      stream: null,
     };
-  },
-  computed: {
-    getCurrentTime() {
-      return this.audioObj.currentTime;
-    },
   },
   methods: {
     playAudio() {
@@ -37,22 +50,40 @@ export default {
     pauseAudio() {
       return this.audioObj.pause();
     },
+    skipAudio({ percent }) {
+      this.mustPlay = false;
+      this.audioObj.currentTime = percent * this.duration;
+      return this.playAudio();
+    },
+    toggleMustPlay() {
+      return (this.mustPlay = !this.mustPlay);
+    },
   },
   mounted() {
     this.audioObj = new Audio(this.audioSrc);
-    this.duration = this.audioObj.duration;
-    this.windowSize = this.$el.clientWidth;
+    this.stream = this.audioObj.captureStream();
+
+    this.elementSize = this.$el.clientWidth - 90;
+    this.windowSize = window.innerWidth;
+
     window.addEventListener("resize", () => {
-      this.windowSize = this.$el.clientWidth;
+      this.elementSize = this.$el.clientWidth - 90;
+      this.windowSize = window.innerWidth;
     });
-    this.audioObj.addEventListener("playing", () => {
-      console.log("Playing...");
-      console.log(this.audioObj.currentTime);
+
+    this.audioObj.addEventListener("loadedmetadata", (meta) => {
+      console.log(meta);
+      this.duration = this.audioObj.duration;
+    });
+
+    this.audioObj.addEventListener("timeupdate", () => {
+      this.currentTime = this.audioObj.currentTime;
     });
   },
   components: {
     ProgressBar,
-    ControlButtons,
+    ControlButton,
+    DisplayInfo,
   },
 };
 </script>
@@ -60,6 +91,7 @@ export default {
 <style>
 * {
   font-family: monospace;
+  color: #03a9f4;
 }
 
 body {
@@ -73,16 +105,14 @@ body {
 
 #app {
   margin: 0 auto;
-  height: 400px;
-  width: 75%;
-  max-width: 600px;
-  min-width: 300px;
+  height: 550px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  border: 2px solid#03a9f4;
+  border: 2px solid #03a9f4;
   border-radius: 1rem;
 }
 </style>
