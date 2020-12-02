@@ -3,7 +3,7 @@
     <DisplayInfo
       :elementSize="elementSize"
       :songName="songName"
-      :stream="stream"
+      :audioEl="audioEl"
     />
     <h2>VUE PLAYER</h2>
     <ProgressBar
@@ -31,37 +31,42 @@ export default {
   name: "App",
   data() {
     return {
-      audioSrc:
-        "https://www.bensound.com/bensound-music/bensound-happyrock.mp3",
-      audioObj: {},
+      audioSrc: "/music/bensound-happyrock.mp3",
+      // "https://www.bensound.com/bensound-music/bensound-happyrock.mp3",
+      audioEl: null,
       duration: 3,
       windowSize: 100,
       elementSize: 100,
       currentTime: 0.1,
       mustPlay: true,
       songName: "Bensound Happyrock",
-      stream: null,
     };
   },
   methods: {
     playAudio() {
-      return this.audioObj.play();
+      return this.audioEl.play();
     },
     pauseAudio() {
-      return this.audioObj.pause();
+      return this.audioEl.pause();
     },
     skipAudio({ percent }) {
       this.mustPlay = false;
-      this.audioObj.currentTime = percent * this.duration;
+      this.audioEl.currentTime = percent * this.duration;
       return this.playAudio();
     },
     toggleMustPlay() {
       return (this.mustPlay = !this.mustPlay);
     },
   },
+  created() {
+    this.audioEl = document.createElement("audio");
+    this.audioEl.crossOrigin = "anonymous";
+    this.audioEl.setAttribute("src", this.audioSrc);
+  },
   mounted() {
-    this.audioObj = new Audio(this.audioSrc);
-    this.stream = this.audioObj.captureStream();
+    this.$el.appendChild(this.audioEl);
+
+    this.audioEl.load();
 
     this.elementSize = this.$el.clientWidth - 90;
     this.windowSize = window.innerWidth;
@@ -71,13 +76,12 @@ export default {
       this.windowSize = window.innerWidth;
     });
 
-    this.audioObj.addEventListener("loadedmetadata", (meta) => {
-      console.log(meta);
-      this.duration = this.audioObj.duration;
+    this.audioEl.addEventListener("loadedmetadata", () => {
+      this.duration = this.audioEl.duration;
     });
 
-    this.audioObj.addEventListener("timeupdate", () => {
-      this.currentTime = this.audioObj.currentTime;
+    this.audioEl.addEventListener("timeupdate", () => {
+      this.currentTime = this.audioEl.currentTime;
     });
   },
   components: {

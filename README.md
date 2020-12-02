@@ -128,5 +128,11 @@ Abaixo segue uma lista com todas as referências utilizadas e consumidas para a 
 
 [14] - [How to read Test Coverage report generated using Jest](https://medium.com/@krishankantsinghal/how-to-read-test-coverage-report-generated-using-jest-c2d1cb70da8b)
 
+[15] - [Visualizations with Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API)
+
+[16] - [How to build a SoundCloud-like audio player app with VueJS, Quasar and WaveSurfer](https://www.learningsomethingnew.com/how-to-build-a-sound-cloud-like-audio-player-app-with-vue-js-quasar-and-wave-surfer)
+
+[17] - [Building an Audio Visualizer With JavaScript](https://medium.com/swlh/building-a-audio-visualizer-with-javascript-324b8d420e7)
+
 ---
 Vinícius Gajo Marques Oliveira, 2020.
