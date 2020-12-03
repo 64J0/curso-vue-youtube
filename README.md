@@ -38,9 +38,9 @@ A imagem abaixo ilustra a aplicação, que consiste num sistema de gestão de cl
 
 O resultado pode ser visto na imagem abaixo.
 
-<span style="display: block; text-align: center;">
+<div style="text-align: center;">
   <img src="assets/screenshot-guiaclientes.png" alt="Demonstração da aplicação 1" />
-</span>
+</div>
 
 ### Segunda aplicação *2-pokedex*
 
@@ -48,9 +48,9 @@ Já na segunda aplicação iremos criar uma Pokedex consumindo os dados de uma A
 
 O resultado deste projeto pode ser visto na imagem abaixo.
 
-<span style="display: block; text-align: center;">
+<div style="text-align: center;">
   <img src="assets/screenshot-pokedex.png" alt="Demonstração da aplicação 2" />
-</span>
+</div>
 
 ### Terceira aplicação *3-estudo-vue*
 
@@ -62,9 +62,9 @@ Embora o algoritmo seja bastante simples, o objetivo ao desenvolver essa aplica�
 
 O resultado deste projeto pode ser visto na imagem a seguir.
 
-<span style="display: block; text-align: center;">
+<div style="text-align: center;">
   <img src="assets/screenshot-todo.png" alt="Demonstração da aplicação 4" />
-</span>
+</div>
 
 Finalizando este projeto foram desenvolvidos testes automatizados para o projeto, utilizando o *Jest* para executá-los.
 
@@ -87,9 +87,9 @@ O objetivo deste projeto é avaliar a realização de testes em situações mais
 
 Para desenvolver o canvas com a visualização dos dados da reprodução de música foi utilizado como principal inspiração a referência [18].
 
-<span style="display: block; text-align: center;">
+<div style="text-align: center;">
   <img src="assets/screenshot-player-vue.png" alt="Player de audio desenvolvido com Vue" />
-</span>
+</div>
 
 **Estudo sobre a referência [18]:**
 
