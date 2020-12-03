@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <DisplayInfo
+    <DisplayAudioWaves
       :elementSize="elementSize"
       :songName="songName"
       :audioEl="audioEl"
@@ -25,7 +25,7 @@
 <script>
 import ProgressBar from "./components/ProgressBar.vue";
 import ControlButton from "./components/ControlButton.vue";
-import DisplayInfo from "./components/DisplayInfo.vue";
+import DisplayAudioWaves from "./components/DisplayAudioWaves.vue";
 
 export default {
   name: "App",
@@ -65,7 +65,6 @@ export default {
   },
   mounted() {
     this.$el.appendChild(this.audioEl);
-
     this.audioEl.load();
 
     this.elementSize = this.$el.clientWidth - 90;
@@ -87,7 +86,7 @@ export default {
   components: {
     ProgressBar,
     ControlButton,
-    DisplayInfo,
+    DisplayAudioWaves,
   },
 };
 </script>

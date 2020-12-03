@@ -85,6 +85,28 @@ Nesta quarta aplicação estou desenvolvendo um player customizado de audio util
 
 O objetivo deste projeto é avaliar a realização de testes em situações mais incomuns, além de entender como funcionam as funcionalidades de Audio do Chrome.
 
+Para desenvolver o canvas com a visualização dos dados da reprodução de música foi utilizado como principal inspiração a referência [18].
+
+<span style="display: block; text-align: center;">
+  <img src="assets/screenshot-player-vue.png" alt="Player de audio desenvolvido com Vue" />
+</span>
+
+**Estudo sobre a referência [18]:**
+
+Neste projeto encontrei pela primeira vez o componente **mixin**, que a ideia é relativamente parecida com a de uma *store* (*Vuex*). Este componente de **mixin** está no caminho */src/components/AvBase.js* do repositório do projeto. A ideia principal do **mixin** é fornecer uma base que pode ser reutilizada em outros componentes do projeto.
+
+Neste componente específico é instanciado um elemento de audio (*HTML*), é setada a propriedade *src*, define se o elemento terá a propriedade *crossorigin="anonymous"*.
+
+Além disso também é instanciado o *canvas* que conterá toda informação visual a respeito do áudio sendo tocado no *player*. É configurada a *width*, a *height* e a *fillColor* deste componente a partir das informações passadas por props para o componente.
+
+Continuando, após instanciar estes elementos, este componente é responsável por setar o *analyser* e conectar com a tag de audio instanciada anteriormente, associando vários eventos a este elemento e criando a função que será executada para desmontar o elemento e retirar o analyser, evitando que a página fique processando indefinidamente.
+
+O gráfico que decidi implementar neste projeto até então foi o *AvLine*, que pode ser encontrado no caminho *src/components/AvLine.js*. Neste componente são definidos os detalhes da exibição no canvas dos dados do áudio sendo tocado, por exemplo a *lineWidth*, *lineColor* e o *fftSize*.
+
+No corpo do componente são definidas algumas funções, por exemplo, o *mainLoop()*, que configura os dados obtidos a partir do *analyser*, são configuradas as informações obtidas a partir das props no elemento de *canvas*.
+
+Além disso também são definidas as funções "privadas" *_setCanvas()* e *_drawLine()* que são responsáveis por fazer configurações internas na função principal *mainLoop()*.
+
 ---
 ## Test Coverage - Explicação dos termos
 
@@ -133,6 +155,8 @@ Abaixo segue uma lista com todas as referências utilizadas e consumidas para a 
 [16] - [How to build a SoundCloud-like audio player app with VueJS, Quasar and WaveSurfer](https://www.learningsomethingnew.com/how-to-build-a-sound-cloud-like-audio-player-app-with-vue-js-quasar-and-wave-surfer)
 
 [17] - [Building an Audio Visualizer With JavaScript](https://medium.com/swlh/building-a-audio-visualizer-with-javascript-324b8d420e7)
+
+[18] - [vue-audio-visual](https://github.com/staskobzar/vue-audio-visual)
 
 ---
 Vinícius Gajo Marques Oliveira, 2020.
