@@ -78,7 +78,7 @@ export default {
     },
   },
   mounted() {
-    this.canvas = window.document.querySelector("canvas");
+    this.canvas = this.$el.querySelector("canvas");
     this.canvasCtx = this.canvas.getContext("2d");
 
     this.audioEl.addEventListener("play", () => {

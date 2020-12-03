@@ -1,4 +1,5 @@
 module.exports = {
+  setupFiles: ["jest-canvas-mock"],
   preset: "@vue/cli-plugin-unit-jest",
   verbose: true,
   testMatch: ["**/__tests__/**/*"],

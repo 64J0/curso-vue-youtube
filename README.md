@@ -91,6 +91,8 @@ Para desenvolver o canvas com a visualização dos dados da reprodução de mús
   <img src="assets/screenshot-player-vue.png" alt="Player de audio desenvolvido com Vue" />
 </div>
 
+*Observação:* Para executar os testes nesse projeto, como ele utiliza o componente canvas será necessário instalar um pacote adicional chamado *jest-canvas-mock* e realizar o import deste componente no arquivo *jest.config.js*.
+
 **Estudo sobre a referência [18]:**
 
 Neste projeto encontrei pela primeira vez o componente **mixin**, que a ideia é relativamente parecida com a de uma *store* (*Vuex*). Este componente de **mixin** está no caminho */src/components/AvBase.js* do repositório do projeto. A ideia principal do **mixin** é fornecer uma base que pode ser reutilizada em outros componentes do projeto.
